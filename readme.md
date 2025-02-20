@@ -31,3 +31,21 @@
 
 8.  run `python manage.py runserver`
 
+### NOTE
+    If all doesnt run well, check your program structure 
+    It should be:
+        techmaps/[
+            
+            <virtual_environtment>,
+            techmaps/[
+                base
+                techmaps
+                manage.py
+                db.sqlite3
+                ...................
+            ]
+        ]
+
+            
+            techmaps/
+
