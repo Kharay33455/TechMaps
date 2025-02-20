@@ -36,16 +36,16 @@
     It should be:
         techmaps/[
             
-            <virtual_environtment>,
+            <virtual_environment>,
             techmaps/[
+                .git
                 base
+                .env
                 techmaps
                 manage.py
                 db.sqlite3
-                ...................
+                .gitignore
+                readme
+                requirements
             ]
         ]
-
-            
-            techmaps/
-
