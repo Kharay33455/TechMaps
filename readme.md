@@ -23,7 +23,7 @@
 7.  IN the same path as .gitignore, create a .env file `code .env` for windows or `nano .env` for linux
     *   Add the following <br/>
 
-        DB_URL = db.sqlite3 <br/>
+        DB_URL = youNeedToSetUpAPOSTGRESQLDatabaseAndConnectWithItsExternalURL <br/>
         SECRET_KEY =   pickAnyLongStringValueMakeItVeryLongAndAddThese:)(U(T*R&YTY@*&*(#U&(*(*#&&*)))))avoidquotesymbols <br/>
         DEBUG = True
 

@@ -81,11 +81,10 @@ WSGI_APPLICATION = 'techmaps.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / os.getenv('DB_URL'),
-    }
+    'default': dj_database_url.parse(os.getenv('DB_URL'))
 }
 
 
