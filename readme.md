@@ -23,8 +23,8 @@
 7.  IN the same path ad .gitignore, create a .env file `code .env` for windows or `nano .env` for linux
     *   Add the following <br/>
 
-        DB_URL = db.sqlite3
-        SECRET_KEY =   pickAnyLongStringValueMakeItVeryLongAndAddThese:)(U(T*R&YTY@*&*(#U&(*(*#&&*)))))
+        DB_URL = db.sqlite3 <br/>
+        SECRET_KEY =   pickAnyLongStringValueMakeItVeryLongAndAddThese:)(U(T*R&YTY@*&*(#U&(*(*#&&*))))) <br/>
         DEBUG = True
 
 7.  Run `python manage.py migrate`
