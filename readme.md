@@ -24,7 +24,7 @@
     *   Add the following <br/>
 
         DB_URL = db.sqlite3 <br/>
-        SECRET_KEY =   pickAnyLongStringValueMakeItVeryLongAndAddThese:)(U(T*R&YTY@*&*(#U&(*(*#&&*))))) <br/>
+        SECRET_KEY =   pickAnyLongStringValueMakeItVeryLongAndAddThese:)(U(T*R&YTY@*&*(#U&(*(*#&&*)))))avoidquotesymbols <br/>
         DEBUG = True
 
 7.  Run `python manage.py migrate`
