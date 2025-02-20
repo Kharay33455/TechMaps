@@ -26,4 +26,12 @@
 
 ### NOTE:
 
-    Edit your settings.py file and create a gitignore. Use it to stop tracking your settings.py file before you make any pushes
+    Edit your settings.py file and create a gitignore. 
+
+    ADD the following lines:
+
+    ```
+    techmaps/settings.py
+    .gitignore
+    *pyc
+    ```
