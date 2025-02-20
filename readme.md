@@ -8,7 +8,7 @@
 
 2.  CD into the folder and pull from git by running in console `git clone https://github.com/Kharay33455/TechMaps.git` *You would only clone here, pull afterwards*
 
-3.  Go back to tech maps and create your virtual environment 
+3.  create your virtual environment 
     *  venv =>    `python -m venv <name_of_env>`
     *  virtualenv => `virtualenv <name_of_env>`
 
@@ -16,11 +16,11 @@
     *   windows: `<name_of_env>/scripts/activate`
     *   linux:  `source <name_of_env>/bin/activate`
 
-5.  cd back into the folder you pulled from git.. where you can see the *requirements.txt* file.
+5.  run `ls` for linux and `dir` for windows.. make sure you can see the *requirements.txt* file.
 
 6.  run `pip install -r requirements.txt`
 
-7.  IN the same path ad .gitignore, create a .env file `code .env` for windows or `nano .env` for linux
+7.  IN the same path as .gitignore, create a .env file `code .env` for windows or `nano .env` for linux
     *   Add the following <br/>
 
         DB_URL = db.sqlite3 <br/>
