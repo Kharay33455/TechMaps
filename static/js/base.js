@@ -1,0 +1,1 @@
+alert('Javsscript is linked and working')

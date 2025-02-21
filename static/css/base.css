@@ -1,0 +1,22 @@
+
+
+/* Mobile phone css view*/
+@media screen and (max-width:600px) {
+    p{
+        color: blue;
+    }
+}
+
+/* Ipad devices */
+@media screen and (min-width:601px) and (max-width:1200px) {
+    p{
+        color: red;
+    }
+}
+
+/* Desktop devices */
+@media screen and (min-width:1201px) {
+    p{
+        color: orange;
+    }
+}
