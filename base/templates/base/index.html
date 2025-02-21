@@ -2,6 +2,13 @@
 {% load static %}
 
 {% block content %}
+{% if signed_in %}
+<p>You are signed in</p>
+{% else %}
+<p>
+    Please sign in to continuie
+</p>
+{% endif %}
 <img src="{% static 'images/pic.jpeg' %}"  style="width: 100%;">
 <h1>fhfjj</h1>
 {% endblock %}

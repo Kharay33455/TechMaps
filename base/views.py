@@ -5,7 +5,8 @@ from django.http import HttpResponse
 #home view
 def base(request):
     if request.user.is_authenticated and request.user != None:
-        context = {}
+        context = {'signed_in' : True}
         return render(request, 'base/index.html', context)
     else:
-        return HttpResponse('NOT FOUND')
+        context = {'signed_in' : False}
+        return render(request, 'base/index.html', context)
