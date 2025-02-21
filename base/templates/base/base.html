@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="TECH MAPS is an innovative platform that helps developers and designers find colleagues nearby, based on their geographical location. It also enables seamless collaboration on test projects and provides an easy way to showcase work without the need to host it independently.">
+    <meta name="keywords" content="developers, designers, learn, code, figma, JavaScript, python, html, css, c, programming, frontend, backend, django, node.js, react,">
+    <meta name="author" content="TECH MAPS">
+    
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:title" content="TECH MAPS">
+    <meta property="og:description" content="TECH MAPS is an innovative platform that helps developers and designers find colleagues nearby, based on their geographical location. It also enables seamless collaboration on test projects and provides an easy way to showcase work without the need to host it independently.">
+    <meta property="og:image" content="URL of the image to display when shared on social media">
+    <meta property="og:url" content="URL of your page">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags (for Twitter sharing) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TECH MAPS">
+    <meta name="twitter:description" content="TECH MAPS is an innovative platform that helps developers and designers find colleagues nearby, based on their geographical location. It also enables seamless collaboration on test projects and provides an easy way to showcase work without the need to host it independently.">
+    <meta name="twitter:image" content="URL of the image for Twitter sharing">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Canonical Link to avoid duplicate content issues -->
+    <link rel="canonical" href="https://techmaps.onrender.com/">
+
+    <!-- Structured Data (JSON-LD for better visibility in search results) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Your Website Name",
+        "url": "https://techmaps.onrender.com/",
+        "description": "Brief description of your website.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Your Organization Name",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.yoursite.com/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- Title -->
+    <title>TECH MAPS</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Social Sharing & Open Graph (for better control of content shown on social media) -->
+    <meta property="og:image" content="path-to-your-image.jpg">
+    <meta property="og:site_name" content="TECH MAPS">
+    <meta property="og:type" content="website">
+
+    <!-- Ensure better text rendering on mobile devices -->
+    <meta name="theme-color" content="#ffffff">
+    
+
+    <!-- Google Analytics / other tracking scripts -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-XXXXXX-X');
+    </script>
+    
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <section>
+            <h1>Welcome to Our Website</h1>
+            <p>Introductory content about your business, services, or purpose here.</p>
+        </section>
+        {% block content %}
+        {% endblock %}
+        <section>
+            <h2>Our Services</h2>
+            <p>Details about the services you offer to your customers.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Your Website Name. All rights reserved.</p>
+        <p>Follow us on social media: <a>Facebook</a> | <a>Twitter</a></p>
+    </footer>
+
+</body>
+</html>
