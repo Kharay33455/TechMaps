@@ -91,9 +91,119 @@
 <body>
 
     <!-- Navigation -->
-    <!--Implement the van bar in here for help with seo-->
+    <!--Implement the nav bar in here for help with seo-->
     <header>
+        <nav>
+            <!--Nav bar splited into three main parts: Icons, Links, user account-->
+            <div class="navMainGrid">
+                <!--Icons-->
+                <div class="navInner">
+                    <div>
+                        <svg stroke-width="2" stroke="white" xmlns="http://www.w3.org/2000/svg" width="4vw" height="4vw" fill="currentColor"
+                            class="bi bi-code" viewBox="0 0 16 16">
+                            <path
+                                d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8z" />
+                        </svg>
+                    </div>
 
+                    <div>
+                        <h1>
+                            TECHMAPS
+                        </h1>
+                    </div>
+
+                </div>
+
+                <!--Other links-->
+                <div class="navInner noMobile">
+
+                    <div>
+                        Home
+                    </div>
+
+                    <div>
+                        Resources
+                    </div>
+                    
+                    <div>
+                        Projects
+                    </div>
+                
+                </div>
+
+                <!--Manage user account-->
+                <div class="navInner noMobile">
+                    {% if request.user.is_authenticated %}
+                    <div>
+                        Profile
+                    </div>
+
+                    <div>
+                        <a class="navLink" href="{% url 'base:logout' %}">
+                            Log Out
+
+                        </a>
+                    </div>
+
+                    {% else %}
+                    <div>
+                        <p class="tmButton">
+                            <a class="navLink" href="{% url 'social:begin' 'github' %}">
+
+                                Sign In
+                            </a>
+                        </p>
+                    </div>
+
+                    <div>
+                        Join Us
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!--Only show for mobile devices-->
+                <div class="navInner">
+                    <svg onclick="expandNavForMobile()" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="1.5"  width="16" height="16" fill="currentColor" class="bi bi-list noDesktop noTablet" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                      </svg>
+                </div>
+            </div>
+
+            <!--Expand for mobile views only-->
+            <div class="noDesktop noTablet hideNav" id="mobileExtraNav">
+
+                <div style="color: white;">
+                    <p class="mobileInnerLinks">
+                        Home
+                    </p>
+                    <p class="mobileInnerLinks">
+                        Resources
+                    </p>
+                    <p class="mobileInnerLinks">
+                        Projects
+                    </p>
+    
+                </div>
+    
+                <div style="display: flex; gap: 5vw; color: white; align-items: center;" class="mobileInnerLinks">
+                    {% if request.user.is_authenticated %}
+                    <p class="tmButton">
+                        <a class="navLink">Profile</a>
+                    </p>
+                    <p>
+                        <a class="navLink" href="{% url 'base:logout' %}">Log Out</a>
+                    </p>
+                    {% else %}
+                    <p class="tmButton">
+                        <a class="navLink" href="{% url 'social:begin' 'github' %}">Sign In</a>
+                    </p>
+                    <p>
+                        Join Us
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
     </header>
 
     <!-- Main Content -->

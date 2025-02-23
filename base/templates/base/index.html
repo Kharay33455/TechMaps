@@ -2,13 +2,15 @@
 {% load static %}
 
 {% block content %}
-{% if signed_in %}
-<p>You are signed in</p>
+<div style="background-color: red;">
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt iure porro suscipit blanditiis temporibus sapiente cumque adipisci non! Eum esse ut quis reprehenderit mollitia ipsa exercitationem, laboriosam labore ipsam perferendis.
+</div>
+{% if request.user.is_authenticated %}
+<p style="font-size: xx-large;">You are signed in as {{request.user.username}} with github</p>
 {% else %}
-<p>
-    Please sign in to continuie
+<p style="font-size: xx-large;">
+    Please sign in to continue
 </p>
 {% endif %}
-<img src="{% static 'images/pic.jpeg' %}"  style="width: 100%;">
-<h1>fhfjj</h1>
+
 {% endblock %}

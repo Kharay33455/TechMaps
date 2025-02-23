@@ -1,12 +1,19 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.urls import reverse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import logout
 # Create your views here.
 
 #home view
 def base(request):
     if request.user.is_authenticated and request.user != None:
-        context = {'signed_in' : True}
+        context = {}        
         return render(request, 'base/index.html', context)
     else:
-        context = {'signed_in' : False}
+        context = {}
         return render(request, 'base/index.html', context)
+    
+# log out user
+def logout_request(request):
+    logout(request)    
+    return HttpResponseRedirect(reverse('base:index'))

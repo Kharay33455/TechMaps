@@ -30,7 +30,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
+#DEBUG = True #developmentEnv
+DEBUG = False #ProdEnv
+
+
 
 ALLOWED_HOSTS = ['techmaps.onrender.com', '127.0.0.1']
 
@@ -45,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +62,24 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
+
+#github auth
+#SOCIAL_AUTH_GITHUB_KEY = os.getenv('SOCIAL_AUTH_GITHUB_KEY') #developmentEnv
+SOCIAL_AUTH_GITHUB_KEY = os.getenv('SOCIAL_AUTH_GITHUB_KEY_PROD') #productionEnv
+
+#SOCIAL_AUTH_GITHUB_SECRET = os.getenv('SOCIAL_AUTH_GITHUB_SECRET')  #developmentEnv
+SOCIAL_AUTH_GITHUB_SECRET = os.getenv('SOCIAL_AUTH_GITHUB_SECRET_PROD')  #productionEnv
+
+SOCIAL_AUTH_GITHUB_SCOPE = ['user']
+
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2', 
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_REDIRECT_URL = '/' 
+
 
 ROOT_URLCONF = 'techmaps.urls'
 
@@ -120,12 +143,11 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#STATICFILES_DIRS = [BASE_DIR/'static']
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') # productionEnv
+#STATICFILES_DIRS = [BASE_DIR/'static']  #developmentEnv
 
 MEDIA_URL = ''
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
